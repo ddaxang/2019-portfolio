@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap');
+
+/* ----------------------reset CSS---------------------- */
+*{
+    margin: 0;
+    padding: 0;
+}
+ol,ul{
+    list-style: none;
+}
+a{
+    outline: 0;
+    text-decoration: none;
+    color: #555;
+}
+img{border: 0;}
+body{font-family: 'DM Serif Text';}
+/* ----------------------전체프레임---------------------- */
+#wrap{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 1400px;
+    min-height: 780px;
+    background-image: url(../img/bg_morning.jpg);
+    background-size: cover;
+    transition: all 2s;
+}
+/* ----------------------로고---------------------- */
+#wrap h1{
+    width: 110px;
+    height: 60px;
+    position: fixed;
+    top: 40px;
+    left: 60px;
+    background-image: url(../img/logo_b.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+/* ----------------------주메뉴---------------------- */
+#gnb{
+    position: fixed;
+    top: 60px;
+    right: 200px;
+}
+#gnb li{
+    float: left;
+    margin-left: 30px;
+}
+#gnb li a{
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+}
+/* ----------------------SNS버튼---------------------- */
+#sns{
+    position: fixed;
+    top: 60px;
+    right: 50px;
+}
+#sns li{
+    float: left;
+    margin-left: 20px;
+}
+#sns li a{
+    font-size: 18px;
+    color: #555;
+}
+/* ----------------------센터 영역---------------------- */
+figure{
+    position: absolute;
+    top: 25%;
+    right: 6%;
+    width: 400px;
+    height: 500px;
+    transition: all 2s;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+figure img{
+    position: relative;
+    top: 15px;
+    left: -14px;
+    width: 110%;
+    height: auto;
+}
+figure p:nth-child(2){
+    position: relative;
+    top: 20px;
+    width:100%;
+    font-size: 45px;
+    color: #eee;
+    box-sizing: border-box;
+    text-align: center;
+}
+figure p:nth-child(3){
+    position: relative;
+    top: 35px;
+    font-size: 25px;
+    text-align: center;
+    color: #eee;
+}
+figure p span{
+    position: relative;
+    z-index: 5;
+}
+/* ----------------------테마버튼---------------------- */
+nav{
+    position: fixed;
+    bottom: 70px;
+    left: 6%;
+    width: 88%;
+}
+nav li{
+    float: left;
+    width: 20%;
+}
+nav li a{
+    display: block;
+    width: 98%;
+    height: 35%;
+    background-color: #fff;
+    color: #111;
+    margin: 0 auto;
+    transition: all 0.5s;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 3;
+    letter-spacing: 3px;
+    box-sizing: border-box;
+    padding-left: 30px;
+    opacity: 0.6;
+    z-index: 1;
+}
+nav li:hover a{
+    background-color: #111;
+    color: #ff0;
+    opacity: 0.9;
+}
+nav li.on a{
+    background-color: #111;
+    color: #eee;
+    opacity: 0.9;
+}
+/* ----------------------배경연기---------------------- */
+#wrap>img.smoke:nth-child(1){
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    height: 400px;
+    animation: ani1 30s linear infinite alternate;
+    opacity: 0.3;
+}
+#wrap>img.smoke:nth-child(2){
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    height: 300px;
+    animation: ani2 20s linear infinite alternate;
+    opacity: 0.5;
+}
+#wrap>img.smoke:nth-child(3){
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    height: 500px;
+    animation: ani3 50s linear infinite alternate;
+    opacity: 0.2;
+}
+/* ----------------------연기모션---------------------- */
+@keyframes ani1{
+    0%{top: 50%;}
+    100%{top: 20%;}
+}
+@keyframes ani2{
+    0%{top: 40%;}
+    100%{top: 5%;}
+}
+@keyframes ani3{
+    0%{top: 50%;}
+    100%{top: 25%;}
+}
+/* ----------------------크로와상테마---------------------- */
+#wrap.Croissant{
+    background: url(../img/bg1.jpg) no-repeat center;
+    background-size: 100%;
+}
+#wrap.Croissant h1{background-image: url(../img/logo_w.png);}
+#wrap.Croissant #gnb a{color: #eee;}
+#wrap.Croissant #sns i{color: #eee;}
+/* ----------------------빨미까레테마---------------------- */
+#wrap.Palmiercarre{
+    background: url(../img/bg2.jpg) no-repeat center;
+    background-size: 100%;
+}
+#wrap.Palmiercarre h1{background-image: url(../img/logo_w.png);}
+#wrap.Palmiercarre #gnb a{color: #eee;}
+#wrap.Palmiercarre #sns i{color: #eee;}
+/* ----------------------프레첼 테마---------------------- */
+#wrap.Pretzel{
+    background: url(../img/bg3.jpg) no-repeat center;
+    background-size: 100%;}
+#wrap.Pretzel h1{background-image: url(../img/logo_b.png);}
+#wrap.Pretzel #gnb a{color: #444;}
+#wrap.Pretzel #sns i{color: #444;}
+/* ----------------------바게트 테마---------------------- */
+#wrap.Baguette{
+    background: url(../img/bg4.jpg) no-repeat center;
+    background-size: 100%;}
+#wrap.Baguette h1{background-image: url(../img/logo_w.png);}
+#wrap.Baguette #gnb a{color: #eee;}
+#wrap.Baguette #sns i{color: #eee;}
+/* ----------------------준비 테마---------------------- */
+#wrap.Ready{
+    background: url(../img/bg5.jpg) no-repeat center;
+    background-size: 100%;}
+#wrap.Ready h1{background-image: url(../img/logo_w.png);}
+#wrap.Ready #gnb a{color: #eee;}
+#wrap.Ready #sns i{color: #eee;}

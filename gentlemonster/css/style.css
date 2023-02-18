@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@700&display=swap');
+/* @import url('http://fonts.googleapis.com/css?family=Orbitron'); */
+
+/* -----------------------reset css-----------------------  */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ol,li{
+    list-style: none;
+}
+body{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    color: #fff;
+}
+a{
+    outline: 0;
+    text-decoration: none;
+    color: #bbb;
+}
+img{
+    border: 0;
+}
+
+/* -----------------------header 로고----------------------- */
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #010101;
+    z-index: 5;
+}
+header h1{
+    width: 300px;
+    position: relative;
+    top: 27px;
+    left: 40px;
+    z-index: 50;
+}
+header h1 img{
+    width: 100%;
+    height: auto;
+}
+/* -----------------------header sns----------------------- */
+header>ul{
+    position: absolute;
+    top: 35px;
+    right: 30px;
+    z-index: 2;
+}
+header>ul li{
+    float: left;
+    margin-right: 10px;
+    transition: all 0.4s;
+}
+header>ul li:hover{
+    opacity: 1;
+    transform: scale(1.2);
+}
+header>ul .fa{
+    font-size: 25px;
+    color: #fff;
+}
+/* -----------------------nav----------------------- */
+nav{
+    width: 800px;
+    height: 50px;
+    position: absolute;
+    top: 16px;
+    left: 30%;
+    z-index: 6;
+}
+nav>ul{
+    height: 100%;
+    margin: 0 auto;
+}
+nav>ul>li{
+    width: 160px;
+    height: 100%;
+    float: left;
+    text-align: center;
+    box-sizing: border-box;
+    line-height: 50px;
+    position: relative;
+}
+
+nav>ul>li>a{
+    display: block;
+    width: 160px;
+    height: 100%;
+    font: 16px/4 Heebo;
+    color: #aaa;
+    transition: all 0.4s;
+}
+nav>ul>li:hover>a{
+    transform: scale(1.1);
+    color: #fff;
+} 
+/* -----------------------nav 2depth 패널----------------------- */
+nav>ul>li>div{
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 158px;
+    background: #000;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: 0.5s;
+}
+nav>ul>li:hover>div{
+    opacity: 0.8;
+    transform: translateY(72px);
+}
+
+/* -----------------------nav 2depth 썸네일----------------------- */
+nav>ul>li>div p{
+    width: 100%;
+    height: 120px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+nav>ul>li>div>p img{
+    width: 100%;
+    opacity: 0.8;
+}
+
+/* -----------------------nav 2depth 메뉴----------------------- */
+
+nav>ul>li>div>ul>li>a{
+    display: block;
+    width: 100%;
+    height: 37px;
+    border-top: 1px solid #111;
+    color: #ddd;
+    text-align: center;
+    font: 11px/3.5 Heebo;
+    color: #888;
+    transition: all 0.4s;
+}
+nav>ul>li>div>ul>li>a:hover{
+    background-color: #fff;
+    color: #000;
+} 
+
+
+/* -----------------------section----------------------- */
+section{
+    position: relative;
+    background-color: #fff;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    opacity: 1;
+}
+#image>img{
+    width: auto;
+    height: 100%;
+    position: absolute;
+    top: -15px;
+    right: 0;
+}
+/* ------------------컬렉션 간략 소개------------------ */
+#info{
+    position: absolute;
+    top: 32%;
+    left: 100px;
+    color: #000;
+    z-index: 1000;
+}
+#info h2{
+    font: 50px;
+   margin-bottom: 15px;
+}
+#info p:nth-child(2){
+    margin-bottom: 40px;
+}
+#info a{
+    display:block;
+    width: 250px;
+    height: 45px;
+    line-height: 42px;
+    text-align: center;
+    color: #222;
+    border: 1px solid #222;
+}
+#info a:hover{
+    background-color: #222;
+    color: #fff;
+}
+/* -----------------------footer----------------------- */
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #010101;
+    border-top: 1px solid #222;
+    z-index: 5;
+}
+footer ul{
+    width: 40%;
+    height: 30px;
+    float: left;
+    margin-left: 30px;
+    margin-top: 3px;
+}
+footer ul li{
+    float: left;
+    width: 16.66%;
+    text-align: center;
+}
+footer ul li a{
+    font: 11px/2 arial;
+    columns: #555;
+}
+footer ul li:hover a{
+    color: #fff;
+}
+footer span{
+    font: 10px/2 heebo;
+    color: #666;
+    float: right;
+    letter-spacing: 1px;
+    margin-right: 40px;
+    margin-top: 4px;
+}

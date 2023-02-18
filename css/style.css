@@ -1,0 +1,655 @@
+/* ---------------------폰트--------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@font-face { font-family: 'Noto Sans KR'; font-style: normal; font-weight: 300; src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype'); } @font-face { font-family: 'Noto Sans KR'; font-style: normal; font-weight: 400; src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype'); } @font-face { font-family: 'Noto Sans KR'; font-style: normal; font-weight: 500; src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype'); } 
+
+/* --------------------초기화-------------------- */
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    ol,ul{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+    }
+    body{
+        width: 100%;
+        height: 100%;
+        font-family: 'Noto Sans KR';
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 30px;
+    }
+    h2{
+        font-family: 'Permanent Marker';
+        font-size: 30px;
+        color: #0e0e4b;
+    }
+    
+
+/* ------------------레이아웃------------------ */
+#body{
+    background-color: #060621;
+    width: 100%;
+    height: 100%;
+    min-width: 1250px;
+}
+
+#wrap{
+    position: relative;
+    top: 0;
+    width: 1250px;
+    min-width: 1250px;
+    height: 100%;
+    background-color: #fff;
+    margin:0 auto;
+    background-attachment:scroll;
+}
+    .sect{
+        width: 100%;
+        min-width: 1250px;
+        height: 100vh;
+    }
+        .container{
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            min-width: 1190px;
+            min-height: 760px;
+            width: 1190px;
+            height: 760px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+/* ----------------------메인---------------------- */
+header{
+    width: 100%;
+    height: 100vh;
+    min-height: 1080px;
+    background: url(../img/main.jpg) no-repeat center center;
+    background-size: cover;
+    background-attachment:fixed;
+}
+    header img:nth-child(1){
+        position: absolute;
+        left: 50vw;
+        top: 50vh;
+        margin: 0 auto;
+        transform: translate(-50%,-50%);
+        width: 400px;
+        animation: main 2.5s infinite;
+    }
+    @keyframes main{
+        0%{top: 50vh;}
+        50%{top: 47vh;}
+        100%{top: 50vh;}
+    }
+    header img:nth-child(2){
+        position: absolute;
+        left: 50vw;
+        top: 75vh;
+        transform: translate(-50%,-50%);
+        width: 40px;
+    }
+    header img:nth-child(3){
+        position: absolute;
+        left: 50vw;
+        top: 81vh;
+        transform: translate(-50%,-50%);
+        /* animation: ani1 2.5s infinite; */
+        width: 23px;
+        animation: scroll 2s linear infinite;
+    }
+    @keyframes scroll{
+        0%{top: 81vh; opacity: 0;}
+        100%{top: 83vh; opacity: 1;}
+    }
+
+/* --------------------네비게이션-------------------- */
+nav{
+    position: relative;
+    width: 100%;
+    height: 70px;
+    background-color: #060621;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+    z-index: 3;
+}
+nav.on{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 1250px;
+        min-width: 1250px;
+        height: 100%;
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+        .navbar .logo img{
+            width: 40px;
+            margin-right: 10px;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+        .navbar >ul{
+            display: inline;
+        }
+            .navbar >ul>li{
+                display: inline-block;
+            }
+            .navbar >ul>li>a{
+                padding: 24px 20px;
+                transition: all 0.2s;
+                color: #fff;
+                font-size: 18px;
+                font-weight: 500;
+            }
+            .navbar >ul>li>a:hover{
+                background-color: #fff;
+                color: #060621;
+                border-radius: 7px 7px 0 0;
+                padding-top: 18px;
+                font-weight: 600;
+                
+            }
+            .navbar >ul>li>a.on{
+                background-color: #fff;
+                color: #060621;
+                border-radius: 7px 7px 0 0;
+                padding-top: 18px;
+                font-weight: 600;
+            }
+/* ---------------------top 버튼--------------------- */
+#top{
+    position: absolute;
+    right: 5%;
+    top: 230%;
+    width: 60px;
+    height: auto;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+#top.on{
+    position: fixed;
+    right: 5%;
+    top: 90%;
+}
+#top img{
+    width: 60px;
+    height: auto;
+}
+
+/* -------------------텍스트 공통사항------------------- */
+.container>ul>li{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+    color: #0e0e4b;
+}
+.container>ul>li>ul>li{
+    font-weight: 400;
+    color: #111;
+}
+
+.container>ul>li>ul>li:first-child{
+    margin-top: 20px;
+}
+/* ------------------section <IT'ME>------------------ */
+
+.c1>div{
+    position: relative;
+    top: 900px;
+    width: 680px;
+    height: 300px;
+    margin: 65px auto;
+    overflow: hidden;
+    opacity: 0;
+}
+    .c1>div>img{
+        cursor: pointer;
+    }
+    .c1>div>img:nth-child(1){
+        position: absolute;
+        transform: scale(1.01);
+        left: 97px;
+        top: 300px;
+        transition: top 0.5s;
+    }
+    .c1>div>img:nth-child(1).on{
+        position: absolute;
+        transform: scale(1.01);
+        left: 97px;
+        top: 127px;
+    }
+    .c1>div>img:nth-child(2){
+        position: absolute;
+        left: 270px;
+        top: 10px;
+        animation: click 1s infinite;
+    }
+    @keyframes click{
+        0%{transform: scale(1); opacity: 0.7;}
+        50%{transform: scale(1.1); opacity: 1;}
+        100%{transform: scale(1); opacity: 0.7;}
+    }
+    .c1>div>img:nth-child(3){
+        float: left;
+        width: 300px;
+        height: auto;
+        vertical-align: middle;
+    }
+    .c1>div>p{
+        float: right;
+        margin-top: 70px;
+        width: 340px;
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 50px;
+    }
+.c1>ul{
+    position: relative;
+    top: 1000px;
+    width: 100%;
+    opacity: 0;
+}
+    .c1>ul>li{
+        width: 25%;
+        float: left;
+        font-weight: 600;
+        font-size: 16px;
+    }
+        .c1>ul>li>ul{margin: 10px 0 20px 5px;}
+        .c1>ul>li>ul>li{
+            font-weight: 400;
+            font-size: 14px;
+        }
+            .c1>ul>li>ul>li>img{
+                width: 25%;
+                margin: 10px;
+                float: left;
+            }
+/* ------------------section <CONCEPT>------------------ */
+
+.c2>div:nth-child(2){
+    position: absolute;
+    left: -100%;
+    opacity: 0;
+    width: 570px;
+    height: 728px;
+    overflow: hidden;
+}
+.c2>div:nth-child(2)>img{
+    float: left;
+    width: 267px;
+    margin-top: 28px;
+}
+.c2>div:nth-child(2)>img:nth-child(1){
+    margin-right: 20px;
+}
+.c2>div:nth-child(3){
+    position: relative;
+    left: 120%;
+    top: 30px;
+    width: 50%;
+    opacity: 0;
+}
+    .c2>div:nth-child(3)>ul>li{
+        font-weight: 600;
+        font-size: 16px;
+        color: #0e0e4b;
+    }
+    .c2>div:nth-child(3)>ul:nth-child(2)>li{
+        display: inline-block;
+        width: 50%;
+    }
+    .c2>div:nth-child(3)>ul>li>ul{
+        font-size: 14px;
+        font-weight: 400;
+        color: #111;
+        margin-top: 20px;
+    }
+    .c2>div:nth-child(3)>ul>li>ul>li{
+        margin-bottom: 20px;
+    }
+    .cbox{
+        width: 95%;
+        height: 50px;
+        margin-top: 10px;
+        margin-left: 5px;
+    }
+    .cbox div{
+        float: left;
+        width: 33.3%;
+        height: 100%;
+    }
+    .cbox div:nth-child(1){background-color: #060621;}
+    .cbox div:nth-child(2){background-color: #7d42da;}
+    .cbox div:nth-child(3){background-color: #ed48c0;}
+    .c2>div:nth-child(3)>ul:nth-child(4) li.box img{
+        height: 41px;
+    }
+    .c2>div:nth-child(3)>ul:nth-child(2)>li:nth-child(1)>ul>li:nth-child(2){
+        text-align: left;
+    }
+    .c2>div:nth-child(3)>ul:nth-child(2)>li:nth-child(2){
+        float: right;
+    }
+    .box{
+        width: 100%;
+        height: 52px;
+        text-align: center;
+    }
+    .font ul li{
+        display: inline-block;
+        font-size: 25px;
+        line-height: 40px;
+    }
+    .font ul li:nth-child(1){
+        font-family: 'Permanent Marker';
+        margin-left: 55px;
+        margin-right: 40px;
+    }
+    .font ul li:nth-child(1) span:nth-child(3){color: #555;}
+    .font ul li:nth-child(1) span:nth-child(5){color: #777;}
+    .font ul li:nth-child(2) span:nth-child(1){font-weight: 600;}
+    .font ul li:nth-child(2) span:nth-child(3){font-weight: 500;}
+    .font ul li:nth-child(2) span:nth-child(5){font-weight: 400;}
+
+/* ------------------section <WEB>------------------ */
+
+.swiper-container1{
+    position: relative;
+    top: 1000px;
+    width: 1180px;
+    height: 700px;
+    margin:28px auto 0;
+    opacity: 0;
+    overflow: hidden;
+}
+.swiper-container1 .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+ .swiper-pagination{
+     z-index: 2;
+ }
+ .swiper-slide>div{
+     position: absolute;
+     top: 50%;
+     left: 58%;
+     transform: translateY(-50%);
+     width: 450px;
+     font-size: 14px;
+     text-align: left;
+ }
+ .swiper-slide>div>h3{
+     font-size: 25px;
+     font-weight: 600;
+     color: #0e0e4b;
+     margin-bottom: 40px;
+ }
+ .swiper-slide>div>ul{
+     margin-bottom: 40px;
+ }
+ .swiper-slide>div>ul>li{
+     font-size: 16px;
+     font-weight: 600;
+     color: #0e0e4b;
+ }
+    .swiper-slide>div>ul>li>ul{
+        font-size: 14px;
+        font-weight: 400;
+        color: #111;
+        margin: 10px 0 20px 5px;
+    }
+.swiper-slide>div>.sitebtn{
+    width: 150px;
+    height: 40px;
+    background-color: #5959a0;
+    text-align: center;
+    line-height: 34px;
+    cursor: pointer;
+}
+.swiper-slide>div>.sitebtn>a{
+    display: inline-block;
+    color: #eee;
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide>div>.sitebtn>a:hover{
+    background-color: #20205c;
+}
+.swiper-slide>div>.sitebtn>a>span{
+    font-size: 25px;
+    vertical-align: -2px;
+}
+/* ------------------section <MOBILE>------------------ */
+#sliderA {
+    position: relative;
+    top: 1000px;
+    opacity: 0;
+    margin: 28px auto 0;
+    background-color: #000;
+    color: #eee;
+}
+    .slide{
+        width: 100%;
+        height: 100%;
+    }
+    .slide p{
+        color: #000;
+    }
+		.btn {
+            width:35px;
+            height:40px;
+            opacity: 0.5;
+            text-align: center;
+            line-height: 30px;
+        }
+		.btn:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+		.indicater {
+            position:absolute;
+            bottom: 15px;
+            opacity: 0.7;
+        }
+		.indicater li {
+            list-style: square;
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color:#888;
+            border-radius: 50%;
+            text-align: center;
+        }
+		.indicater li:hover {
+            cursor: pointer;
+        }
+    /* ---------------------텍스트 설정--------------------- */
+    .itemA:nth-child(1)>div{
+        position: absolute;
+        top: 50%;
+        left: 90px;
+        transform: translateY(-50%);
+        width: 450px;
+        font-size: 14px;
+        text-align: left;
+    }
+    .itemA:nth-child(2)>div{
+        position: absolute;
+        top: 50%;
+        left: 1270px;
+        transform: translateY(-50%);
+        width: 450px;
+        font-size: 14px;
+        text-align: left;
+    }
+    .itemA>div>h3{
+        font-size: 25px;
+        font-weight: 600;
+        color: #0e0e4b;
+        margin-bottom: 40px;
+    }
+    .itemA>div>ul{
+        margin-bottom: 40px;
+    }
+    .itemA>div>ul>li{
+        font-size: 16px;
+        font-weight: 600;
+        color: #0e0e4b;
+        margin-bottom: 20px;
+    }
+       .itemA>div>ul>li>ul{
+           font-size: 14px;
+           font-weight: 400;
+           color: #111;
+           margin: 10px 0 20px 5px;
+       }
+   .itemA>div>.sitebtn{
+       float: left;
+       width: 150px;
+       height: 40px;
+       margin-right: 20px;
+       background-color: #5959a0;
+       text-align: center;
+       line-height: 34px;
+       cursor: pointer;
+   }
+   .itemA>div>.sitebtn>a{
+       display: inline-block;
+       color: #eee;
+       width: 100%;
+       height: 100%;
+   }
+   .itemA>div>.sitebtn>a:hover{
+       background-color: #20205c;
+   }
+   .itemA>div>.sitebtn>a>span{
+       font-size: 25px;
+       vertical-align: -2px;
+   }
+/* ------------------section <ETC>------------------ */
+#sliderB{
+    position: relative;
+    left: -1000px;
+    opacity: 0;
+    margin-top: 28px;
+    background-color: #555;
+    color: #eee;
+}
+#sliderB>p {
+    position: absolute;
+    right: 20px;
+    top: 0px;
+    z-index: 1;
+    font-size: 60px;
+    font-family: 'Permanent Marker';
+    color: rgba(250, 250, 250, 0.5);
+}
+    /* ------------------------------------------- */
+    #sliderC{
+        position: absolute;
+        right: -1000px;
+        bottom: 0;
+        background-color: #555;
+        color: #eee;
+    }
+    #sliderC>p {
+        position: absolute;
+        left: 20px;
+        bottom: 10px;
+        z-index: 1;
+        font-size: 80px;
+        font-family: 'Permanent Marker';
+        color: rgba(250, 250, 250, 0.5);
+    }
+    .itemB, .itemC{
+        position: relative;
+    }
+    .itemB span, .itemC span {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 800px;
+        height: 130px;
+        background-color: rgba(0, 0, 0,0.7);
+        text-align: center;
+        display: inline-block;
+        opacity: 0;
+        cursor: pointer;
+    }
+    .itemB span.on, .itemC span.on {
+        opacity: 1;
+    }
+    .itemB span a, .itemC span a{
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        line-height: 130px;
+        color: #eee;
+        font-size: 25px;
+        font-weight: 300;  
+    }
+
+/* ----------------------footer---------------------- */
+
+#footer {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url(../img/main.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.footer_txt{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-45%,-25%);
+    width: 750px;
+    height: 470px;
+    background-color: rgba(250, 250, 250, 0.1);
+    color: #eee;
+    text-align: center;
+}
+    .footer_txt img{
+        position: absolute;
+        top: -100px;
+        left: 0px;
+        animation: circle 2.5s linear infinite alternate;
+    }
+    @keyframes circle{
+        0%{transform: rotate(0deg);left: 0;}
+        100%{transform: rotate(720deg);left: 650px;}
+    }
+    .footer_txt p{
+        line-height: 50px;
+    }
+    .footer_txt>p:nth-child(2){
+        font-size: 30px;
+        margin-top: 55px;
+    }
